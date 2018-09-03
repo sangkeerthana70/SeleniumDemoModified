@@ -32,19 +32,21 @@ namespace DemoProjectSeleniumModified.TestCases
         public void ExecuteTest()
         {
 
+            Console.WriteLine("1. Starting");
+
             //login to application by creating an instance of Authentication class
             Authentication authentication = new Authentication();
-
-
+            Console.WriteLine("2. Authentication loaded");
             AccountPage accountPage = authentication.SignIn("asangeethu@yahoo.com", "@nuK1978");
+            Console.WriteLine("3. Sign In Done");
             SearchResultsPage searchResults = accountPage.EnterSearchText("printed summer dress");
+            Console.WriteLine("4. Search Done");
+            CheckOut checkout = searchResults.AddToCart();
+            Console.WriteLine("5. Added to cart");
 
-            Console.WriteLine("Executed Login page and did a search query in the next POM");
-
-            searchResults.AddToCart();
-            Console.WriteLine("Hover on search result and added item to cart");
-
-
+            System.Threading.Thread.Sleep(5000);
+            checkout.CompleteTransaction();
+            Console.WriteLine("6. Proceed to checkout");
         }
 
 
