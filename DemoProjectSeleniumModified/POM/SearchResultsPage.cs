@@ -27,7 +27,7 @@ namespace DemoProjectSeleniumModified.POM
         public IWebElement ProceedToCheckOutButton { get; set; }
 
         //hover on search item and add to cart
-        public void AddToCart()
+        public CheckOut AddToCart()
         {
             Actions action = new Actions(PropertiesCollection.driver);
             action.MoveToElement(SearchResult).Perform();
@@ -36,6 +36,8 @@ namespace DemoProjectSeleniumModified.POM
             //manage element not visible
             System.Threading.Thread.Sleep(5000);
             ProceedToCheckOutButton.Click();
+            System.Threading.Thread.Sleep(5000);
+            return new CheckOut();
         }
     }
 }
