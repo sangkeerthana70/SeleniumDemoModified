@@ -56,6 +56,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="POM\AccountPage.cs" />
     <Compile Include="POM\Authentication.cs" />
+    <Compile Include="POM\CheckOut.cs" />
     <Compile Include="POM\SearchResultsPage.cs" />
     <Compile Include="PropertiesCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
