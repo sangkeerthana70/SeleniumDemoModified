@@ -47,6 +47,16 @@ namespace DemoProjectSeleniumModified.TestCases
             System.Threading.Thread.Sleep(5000);
             checkout.CompleteTransaction();
             Console.WriteLine("6. Proceed to checkout");
+
+            IWebElement OrderConfirm = PropertiesCollection.driver.FindElement(By.XPath("//*[@id=\"center_column\"]/p[1]"));
+            Console.WriteLine(OrderConfirm);
+            Boolean Message = OrderConfirm.Text.Contains("Your order on My Store is complete");
+
+            Assert.IsFalse(Message);
+
+
+
+
         }
 
 
@@ -56,16 +66,16 @@ namespace DemoProjectSeleniumModified.TestCases
             //login to application by creating an instance of Authentication class
             Authentication authentication = new Authentication();
             AccountPage accountPage = authentication.SignIn("asanhu@yahoo.com", "qwertop8");
-            //AccountPage accountPage = authentication.SignIn("asangeethu@yahoo.com", "@nuK1978");
+            //AccountPage accountPage = authentication.SignIn("asangeethu@yahoo.com", " ");
 
             IWebElement loginMessage = PropertiesCollection.driver.FindElement(By.XPath("//*[@id=\"center_column\"]/div[1]/ol/li"));
             Console.WriteLine(loginMessage.Text);
             Boolean loginError = loginMessage.Text.Contains("Authentication failed");
             Console.WriteLine(loginError);
             Assert.IsFalse(loginError);
-        }
+                   }
 
-
+        
 
 
         [TearDown]
