@@ -72,8 +72,8 @@ namespace DemoProjectSeleniumModified.TestCases
             Console.WriteLine(loginMessage.Text);
             Boolean loginError = loginMessage.Text.Contains("Authentication failed");
             Console.WriteLine(loginError);
-            Assert.IsFalse(loginError);
-                   }
+            Assert.IsTrue(loginError);
+        }
 
         
 
