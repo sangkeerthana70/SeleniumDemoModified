@@ -52,11 +52,7 @@ namespace DemoProjectSeleniumModified.TestCases
             Console.WriteLine(OrderConfirm);
             Boolean Message = OrderConfirm.Text.Contains("Your order on My Store is complete");
 
-            Assert.IsFalse(Message);
-
-
-
-
+            Assert.IsTrue(Message);
         }
 
 
